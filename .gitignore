@@ -1,0 +1,25 @@
+# секреты и локальные настройки
+.env
+
+# данные и результаты прогонов (база фактов, кэш ответов источников, карточки)
+data/
+out/
+input/private/
+*.db
+
+# служебное Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# локальный прототип и рабочие заметки (не часть пакета)
+/run.py
+/score.py
+/store.py
+/test_rules.py
+/rp_extract.js
+/COLLECT_SCHEMA.md
+/ресерч/
+/КЛЮЧИ_И_СЕРВЕР.md

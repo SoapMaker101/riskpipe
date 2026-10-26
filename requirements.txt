@@ -1,0 +1,5 @@
+requests>=2.31
+PyYAML>=6.0
+pytest>=8.0
+# необязательно: классификатор СМИ через Anthropic API вместо Claude Code CLI
+# anthropic>=0.40

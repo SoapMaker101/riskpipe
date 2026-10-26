@@ -1,0 +1,15 @@
+[Unit]
+Description=riskpipe — утренний пакетный риск-скоринг заказчиков
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=__USER__
+WorkingDirectory=__APP_DIR__
+Environment=PYTHONIOENCODING=utf-8
+# Входной список и ключи: input/private/customers.csv и .env (CHECKO_API_KEY и др.)
+ExecStart=/bin/bash -c '__APP_DIR__/.venv/bin/python -m pipeline.run --input __APP_DIR__/input/private/customers.csv --run-id run-$(date +%%F)'
+# Прогон с волной фронтира и глубоким разбором может идти долго (паузы между запросами к ФНС)
+TimeoutStartSec=3h
+Nice=10

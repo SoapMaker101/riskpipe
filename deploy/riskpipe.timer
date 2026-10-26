@@ -1,0 +1,10 @@
+[Unit]
+Description=riskpipe — запуск каждое утро
+
+[Timer]
+# Время — в часовом поясе сервера (timedatectl set-timezone Europe/Moscow или ваш пояс)
+OnCalendar=*-*-* 06:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
